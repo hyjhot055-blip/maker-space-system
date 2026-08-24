@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11263d">
+  <title>鲤创空间 · 运营管理平台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span>5F</span></div>
+        <div>
+          <strong>鲤创空间</strong>
+          <small>SPACE OPERATIONS</small>
+        </div>
+      </div>
+
+      <div class="location-chip">
+        <span class="pulse-dot"></span>
+        <div><b>鲤城大厦 · 5F</b><small>空间运行正常</small></div>
+      </div>
+
+      <nav class="nav-list" aria-label="主导航">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">⌂</span><span>运营总览</span></button>
+        <div class="nav-label">空间运营</div>
+        <button class="nav-item" data-page="people"><span class="nav-icon">人</span><span>企业与人员</span><em id="peopleBadge">48</em></button>
+        <button class="nav-item" data-page="access"><span class="nav-icon">门</span><span>门禁管理</span><em id="accessBadge">3</em></button>
+        <button class="nav-item" data-page="notices"><span class="nav-icon">告</span><span>通知中心</span></button>
+        <button class="nav-item" data-page="meetings"><span class="nav-icon">会</span><span>会议室预约</span></button>
+        <button class="nav-item" data-page="coworking"><span class="nav-icon">位</span><span>共享办公</span></button>
+        <button class="nav-item" data-page="orders"><span class="nav-icon">¥</span><span>订单与支付</span></button>
+        <div class="nav-label">空间洞察</div>
+        <button class="nav-item" data-page="virtual"><span class="nav-icon">景</span><span>虚拟空间</span><i>预留</i></button>
+        <button class="nav-item" data-page="screen"><span class="nav-icon">屏</span><span>数据大屏</span></button>
+        <button class="nav-item" data-page="settings"><span class="nav-icon">设</span><span>系统设置</span></button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="capacity-line"><span>本月空间利用率</span><b>76%</b></div>
+        <div class="mini-progress"><i style="width:76%"></i></div>
+        <small>较上月提升 8.4%</small>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuToggle" aria-label="打开导航">☰</button>
+        <div class="page-heading">
+          <span>鲤城公司 / 众创空间</span>
+          <h1 id="pageTitle">运营总览</h1>
+        </div>
+        <div class="top-actions">
+          <label class="global-search">
+            <span>⌕</span>
+            <input id="globalSearch" type="search" placeholder="搜索人员、企业或订单" autocomplete="off">
+            <kbd>⌘ K</kbd>
+          </label>
+          <select id="roleSwitcher" class="role-switch" aria-label="切换演示角色">
+            <option value="space-admin">鲤城空间管理员</option>
+            <option value="company-admin">入驻企业管理员</option>
+            <option value="operator">前台运营人员</option>
+            <option value="executive">管理层</option>
+          </select>
+          <button class="icon-btn notification-btn" id="notificationBtn" aria-label="通知"><span>◌</span><i>4</i></button>
+          <div class="avatar">林</div>
+        </div>
+      </header>
+
+      <section class="content" id="appContent" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="assertive"></div>
+  <script src="app.js"></script>
+</body>
+</html>
